@@ -53,6 +53,22 @@ function render(variables = {}) {
   variables.country == null
     ? (personCountry = "Country")
     : (personCountry = variables.country);
+  let twitterHandle = "";
+  variables.twitter == null
+    ? (twitterHandle = "4geeksacademy")
+    : (twitterHandle = variables.twitter);
+  let githubHandle = "";
+  variables.github == null
+    ? (githubHandle = "4geeksacademy")
+    : (githubHandle = variables.github);
+  let linkedinHandle = "";
+  variables.linkedin == null
+    ? (linkedinHandle = "4geeksacademy")
+    : (linkedinHandle = variables.linkedin);
+  let instagramHandle = "";
+  variables.instagram == null
+    ? (instagramHandle = "4geeksacademy")
+    : (instagramHandle = variables.instagram);
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
@@ -60,10 +76,10 @@ function render(variables = {}) {
           <h2>${personRole}</h2>
           <h3>${personCity}, ${personCountry}</h3>
           <ul class=${variables.socialMediaPosition}>
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/${twitterHandle}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${githubHandle}"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${linkedinHandle}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagramHandle}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -84,7 +100,7 @@ window.onload = function() {
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
